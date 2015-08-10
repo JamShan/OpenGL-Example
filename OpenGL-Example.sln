@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ch01-Window", "src\ch01-Window\ch01-Window.vcxproj", "{2F285C9D-4680-40A0-8B2F-A4827D4C4531}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ch01-10", "ch01-10", "{2D9D768D-2E92-4423-A06A-D5308335015E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ch11-20", "ch11-20", "{7E8FFB7F-1078-494E-8943-2DAF045C0DA2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ch21-30", "ch21-30", "{02A0B51E-D84E-45F9-8634-34BF5275AD30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ch31-40", "ch31-40", "{BEDD7996-3C9F-4D99-9E9D-6227311725CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ch41-50", "ch41-50", "{F6A1AD07-DEEB-4F10-ABE0-496D3A0AF8F8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ch02-Triangle", "src\ch02-Triangle\ch02-Triangle.vcxproj", "{6AED2449-9A61-4782-AB1C-BE2FF002781B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ch03-Grey-Filter", "src\ch03-Grey-Filter\ch03-Grey-Filter.vcxproj", "{1A905758-83FE-4E44-B527-365A4684E945}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F285C9D-4680-40A0-8B2F-A4827D4C4531}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2F285C9D-4680-40A0-8B2F-A4827D4C4531}.Debug|Win32.Build.0 = Debug|Win32
+		{2F285C9D-4680-40A0-8B2F-A4827D4C4531}.Release|Win32.ActiveCfg = Release|Win32
+		{2F285C9D-4680-40A0-8B2F-A4827D4C4531}.Release|Win32.Build.0 = Release|Win32
+		{6AED2449-9A61-4782-AB1C-BE2FF002781B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6AED2449-9A61-4782-AB1C-BE2FF002781B}.Debug|Win32.Build.0 = Debug|Win32
+		{6AED2449-9A61-4782-AB1C-BE2FF002781B}.Release|Win32.ActiveCfg = Release|Win32
+		{6AED2449-9A61-4782-AB1C-BE2FF002781B}.Release|Win32.Build.0 = Release|Win32
+		{1A905758-83FE-4E44-B527-365A4684E945}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1A905758-83FE-4E44-B527-365A4684E945}.Debug|Win32.Build.0 = Debug|Win32
+		{1A905758-83FE-4E44-B527-365A4684E945}.Release|Win32.ActiveCfg = Release|Win32
+		{1A905758-83FE-4E44-B527-365A4684E945}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2F285C9D-4680-40A0-8B2F-A4827D4C4531} = {2D9D768D-2E92-4423-A06A-D5308335015E}
+		{6AED2449-9A61-4782-AB1C-BE2FF002781B} = {2D9D768D-2E92-4423-A06A-D5308335015E}
+		{1A905758-83FE-4E44-B527-365A4684E945} = {2D9D768D-2E92-4423-A06A-D5308335015E}
+	EndGlobalSection
+EndGlobal
