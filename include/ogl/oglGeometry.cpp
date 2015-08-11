@@ -1,6 +1,7 @@
 #include "oglGeometry.h"
 #include <iterator>
 #include <algorithm>
+#include <glm/gtc/constants.hpp>
 
 namespace byhj
 {
@@ -93,6 +94,101 @@ void OGLGeometry::CreateCube(float width, float height, float depth, MeshData &m
 
 	mesh.IndexData.clear();
 	mesh.IndexData.assign(std::begin(indexes), std::end(indexes) );
+}
+
+
+void OGLGeometry::CreateSphere(float radius, int sliceCount, int stackCount, MeshData& meshData)
+{
+	//
+	// Compute the vertices stating at the top pole and moving down the stacks.
+	//
+
+	// Poles: note that there will be texture coordinate distortion as there is
+	// not a unique point on the texture map to assign to the pole when mapping
+	// a rectangular texture onto a sphere.
+	Vertex topVertex(0.0f, +radius, 0.0f, 0.0f, +1.0f, 0.0f, 0.0f, 0.0f);
+	Vertex bottomVertex(0.0f, -radius, 0.0f, 0.0f, -1.0f, 0.0f, 0.0f, 1.0f);
+
+	meshData.VertexData.push_back(topVertex);
+
+	float phiStep = glm::pi<float>() / stackCount;
+	float thetaStep = 2.0f * glm::pi<float>() / sliceCount;
+
+	// Compute vertices for each stack ring (do not count the poles as rings).
+	for (int  i = 1; i <= stackCount - 1; ++i)
+	{
+		float phi = i*phiStep;
+
+		// Vertices of ring.
+		for (int  j = 0; j <= sliceCount; ++j)
+		{
+			float theta = j*thetaStep;
+
+			Vertex v;
+
+			// spherical to cartesian
+			v.Pos.x = radius * sinf(phi) * cosf(theta);
+			v.Pos.y = radius * cosf(phi);
+			v.Pos.z = radius * sinf(phi) * sinf(theta);
+
+			v.Normal = glm::vec3(0.0f);
+
+			v.Tex.x = theta / glm::pi<float>() * 2.0f;
+			v.Tex.y = phi / glm::pi<float>();
+
+			meshData.VertexData.push_back(v);
+		}
+	}
+	// Compute indices for top stack.  The top stack was written first to the vertex buffer
+	// and connects the top pole to the first ring.
+	//
+
+	for (int i = 1; i <= sliceCount; ++i)
+	{
+		meshData.IndexData.push_back(0);
+		meshData.IndexData.push_back(i + 1);
+		meshData.IndexData.push_back(i);
+	}
+
+	//
+	// Compute indices for inner stacks (not connected to poles).
+	//
+
+	// Offset the indices to the index of the first vertex in the first ring.
+	// This is just skipping the top pole vertex.
+	int baseIndex = 1;
+	int ringVertexCount = sliceCount + 1;
+	for (int i = 0; i < stackCount - 2; ++i)
+	{
+		for (int j = 0; j < sliceCount; ++j)
+		{
+			meshData.IndexData.push_back(baseIndex + i*ringVertexCount + j);
+			meshData.IndexData.push_back(baseIndex + i*ringVertexCount + j + 1);
+			meshData.IndexData.push_back(baseIndex + (i + 1)*ringVertexCount + j);
+
+			meshData.IndexData.push_back(baseIndex + (i + 1)*ringVertexCount + j);
+			meshData.IndexData.push_back(baseIndex + i*ringVertexCount + j + 1);
+			meshData.IndexData.push_back(baseIndex + (i + 1)*ringVertexCount + j + 1);
+		}
+	}
+
+	//
+	// Compute indices for bottom stack.  The bottom stack was written last to the vertex buffer
+	// and connects the bottom pole to the bottom ring.
+	//
+
+	// South pole vertex was added last.
+	int southPoleIndex = meshData.VertexData.size() - 1;
+
+	// Offset the indices to the index of the first vertex in the last ring.
+	baseIndex = southPoleIndex - ringVertexCount;
+
+	for (int i = 0; i < sliceCount; ++i)
+	{
+		meshData.IndexData.push_back(southPoleIndex);
+		meshData.IndexData.push_back(baseIndex + i);
+		meshData.IndexData.push_back(baseIndex + i + 1);
+	}
 }
 
 

@@ -37,6 +37,11 @@ public:
 
 	void CreateCube(float width, float height, float depth, MeshData &mesh);
 
+	/// Creates a sphere centered at the origin with the given radius.  The
+	/// slices and stacks parameters control the degree of tessellation.
+
+	void CreateSphere(float radius, int sliceCount, int stackCount, MeshData& mesh);
+
 private:
 
 
