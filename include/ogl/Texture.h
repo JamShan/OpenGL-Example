@@ -5,6 +5,8 @@
 #include <gl/glew.h>
 #include <iostream>
 
+#pragma comment(lib, "DevIL.lib")
+
 GLuint loadTexture(const  char* theFileName);
 
 
