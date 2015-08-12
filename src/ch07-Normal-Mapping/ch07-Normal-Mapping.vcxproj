@@ -67,6 +67,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\include\ogl\oglApp.h" />
     <ClInclude Include="..\..\include\ogl\oglShader.h" />
+    <ClInclude Include="..\..\include\ogl\Texture.h" />
     <ClInclude Include="..\..\include\ogl\TextureManager.h" />
     <ClInclude Include="plane.h" />
     <ClInclude Include="RenderSystem.h" />
@@ -74,6 +75,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\include\ogl\oglApp.cpp" />
     <ClCompile Include="..\..\include\ogl\oglShader.cpp" />
+    <ClCompile Include="..\..\include\ogl\Texture.cpp" />
     <ClCompile Include="..\..\include\ogl\TextureManager.cpp" />
     <ClCompile Include="ch07-Normal-Mapping.cpp" />
     <ClCompile Include="plane.cpp" />

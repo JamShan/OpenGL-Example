@@ -24,6 +24,7 @@ $RECYCLE.BIN/
 *.data
 *.tlog
 *.pdb
+*.jpg
 *.exe
 *.idb
 *.log

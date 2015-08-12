@@ -15,7 +15,7 @@ namespace byhj
 		~Plane();
 
 		void Init();
-		void Render();
+		void Render(float aspect);
 		void Shutdown();
 
 	private:
@@ -43,6 +43,9 @@ namespace byhj
 		{
 			GLuint colorTex_loc = byhj::OGL_VALUE;
 			GLuint normalTex_loc = byhj::OGL_VALUE;
+			GLuint model_loc;
+			GLuint view_loc;
+			GLuint proj_loc;
 		}uniform;
 
 	};
