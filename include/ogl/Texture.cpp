@@ -6,6 +6,7 @@ GLuint loadTexture(const  char* theFileName)
 	GLuint textureID;			// Create a texture ID as a GLuint
 	ILuint imageID;				// Create an image ID as a ULuint
 	ilInit();   //≥ı ºªØIL
+
 	ilGenImages(1, &imageID); 		// Generate the image ID
 	ilBindImage(imageID); 			// Bind the image
 	ILboolean success = ilLoadImage(theFileName); 	// Load the image file
