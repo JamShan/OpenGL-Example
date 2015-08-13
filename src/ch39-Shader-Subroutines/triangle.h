@@ -25,6 +25,14 @@ private:
 
 	Shader TriangleShader = { "Triangle Shader" };
 	GLuint program = byhj::OGL_VALUE;
+
+	GLuint offsetRed_loc;
+	GLuint offsetGreen_loc;
+	GLuint offsetBlue_loc;
+
+	GLuint colorRed_loc;
+	GLuint colorGreen_loc;
+	GLuint colorBlue_loc;
 };
 
 }

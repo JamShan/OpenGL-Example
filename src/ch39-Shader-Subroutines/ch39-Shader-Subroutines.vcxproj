@@ -65,6 +65,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\include\ogl\loadText.cpp" />
+    <ClCompile Include="..\..\include\ogl\oglApp.cpp" />
+    <ClCompile Include="..\..\include\ogl\oglShader.cpp" />
     <ClCompile Include="ch39-Shader-Subroutines.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="triangle.cpp" />
@@ -74,6 +77,9 @@
     <None Include="triangle.vert" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\ogl\loadText.h" />
+    <ClInclude Include="..\..\include\ogl\oglApp.h" />
+    <ClInclude Include="..\..\include\ogl\oglShader.h" />
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="triangle.h" />
   </ItemGroup>

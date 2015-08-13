@@ -1,13 +1,30 @@
 #version 430 core
 
-layout (location = 0) out vec4 fragColor;
+subroutine vec4 GetColor();
 
-in VS_OUT
+subroutine uniform GetColor getColor;
+
+out vec4 fragColor;
+
+subroutine(GetColor)
+vec4 redColor()
 {
-  vec4 color;
-}vs_out;
+	return vec4(1.0, 0.0, 0.0, 1.0);
+}
+
+subroutine(GetColor)
+vec4 greenColor()
+{
+	return vec4(0.0, 1.0, 0.0, 1.0);
+}
+
+subroutine(GetColor)
+vec4 blueColor()
+{
+	return vec4(0.0, 0.0, 1.0, 1.0);
+}
 
 void main(void)
 {
-   fragColor = vs_out.color;
+	fragColor = getColor();
 }
