@@ -33,6 +33,7 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\OpenGL-Example.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -64,6 +65,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="plane.comp" />
+    <None Include="plane.frag" />
+    <None Include="plane.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\include\ogl\oglApp.cpp" />
+    <ClCompile Include="..\..\include\ogl\oglShader.cpp" />
+    <ClCompile Include="ch21-Compute-Shader.cpp" />
+    <ClCompile Include="plane.cpp" />
+    <ClCompile Include="RenderSystem.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\ogl\oglApp.h" />
+    <ClInclude Include="..\..\include\ogl\oglShader.h" />
+    <ClInclude Include="plane.h" />
+    <ClInclude Include="RenderSystem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
